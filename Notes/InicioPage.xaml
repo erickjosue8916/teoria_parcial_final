@@ -5,9 +5,7 @@
              xmlns:local1="clr-namespace:Tarea" xmlns:local="clr-namespace:Notes">
     <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
-        <local:PacientesPage />
-        <local1:ConsultasPage />
-        <local1:TipoConsultaPage />
-        <local1:FiltroPacientes />
+        <local1:InfoPage />
+        <local1:ProductosPage />
     </TabbedPage.Children>
 </TabbedPage>

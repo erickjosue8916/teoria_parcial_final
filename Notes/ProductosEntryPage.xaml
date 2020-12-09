@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea.ProductosEntryPage" xmlns:local2="clr-namespace:Tarea.Validaciones"
+             Title="Productos Page">
+    <StackLayout Margin="20">
+        <Label x:Name="lblResponse" />
+        <Label Text="id:"/>
+        <Entry
+                Text="{Binding idProducto}"
+               Margin="20,0,20,0"/>
+        <Label Text="Nombre:"/>
+        <Editor
+                Text="{Binding nombreProducto}"
+               Margin="20,0,20,0"/>
+        <Label Text="Tipo Producto:"/>
+        <Editor
+                Text="{Binding tipoProducto}"
+               Margin="20,0,20,0"/>
+        <Label Text="Precio Unidad:"/>
+        <Entry x:Name="price" TextChanged="price_TextChanged"
+                Text="{Binding precioUnidad}"
+               Margin="20,0,20,0">
+            <Entry.Behaviors>
+                <local2:NumberValidatorBehavior x:Name="val"></local2:NumberValidatorBehavior>
+            </Entry.Behaviors>
+        </Entry>
+        <Label Text="Precio Unidad Sin IVA:"/>
+        <Entry x:Name="iPriceWithoutIva"
+                Text="{Binding precioUnidadsinIva}"
+               Margin="20,0,20,0">
+        </Entry>
+        <Label Text="Total Producto:"/>
+        <Entry x:Name="iTotalPrice"
+                Text="{Binding totalProducto}" 
+               Margin="20,0,20,0"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    Text="Save" 
+                    Clicked="OnSaveButtonClicked" 
+                    BindingContext="{x:Reference Name=val}"
+                      IsEnabled="{Binding Path=Valido}"/>
+            <Button Grid.Column="1"
+                    Text="Delete" 
+                    Clicked="OnDeleteButtonClicked" 
+                    BindingContext="{x:Reference Name=val}"
+                      IsEnabled="{Binding Path=Valido}"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

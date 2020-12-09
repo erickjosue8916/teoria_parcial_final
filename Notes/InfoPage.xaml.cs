@@ -10,21 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Tarea
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FiltroPacientes : ContentPage
+    public partial class InfoPage : ContentPage
     {
-        public FiltroPacientes()
+        public InfoPage()
         {
             InitializeComponent();
-        }
-
-        private void OnDateSelected(object sender, DateChangedEventArgs e)
-        {
-
-        }
-
-        private void searchPaciente_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
